@@ -2,28 +2,19 @@
 
 mov bp, 0x9000
 
+mov bx, intro
+call print
+call print_nl
 
-
-;
-;       Beginning Bootloader of Lunux.
-;       I dont know how to disable the stupid AI agents suggesting
-;       code to me.
-;
-
-
-; BIOS:
-;   Basic
-;   Input
-;   Output 
-;   System
-
-;CPU interrupts are specific commands that are used to 
-;commmunicate with the BIOS, so this allows us to do things
-;like print onto the screen accsess data from USB, and 
-;basically everything else that is preripheral to the computer.
 
 jmp $
 
+%include 'boot_print.asm'
+%include 'boot_printhex.asm'
+
+
+intro:
+    db "LUNUX", 0
 
 
 times 510-($-$$) db 0

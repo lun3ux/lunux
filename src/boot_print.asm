@@ -1,3 +1,9 @@
+
+
+; USAGE:
+; mov bx, str
+; call print
+
 print:
     pusha
 
