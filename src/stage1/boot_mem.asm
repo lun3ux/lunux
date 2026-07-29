@@ -1,6 +1,10 @@
 read_sect:
-    mov ah, 0x02
-    mov al, 0x01
+    mov ah, 02h
+    mov al, 01h
+    mov ch, 0h
+    mov cl, 0h
+    mov dh, 0h
+    mov dl, 80h
     int 0x13
     jc .fail        ; Jump if Carry Flag (CF) is set (failure)
     ret

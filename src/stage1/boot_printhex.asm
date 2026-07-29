@@ -1,3 +1,10 @@
+; USAGE: 
+; this function prints hex strings onto screen.
+; inputs: 
+; dx: value to be printed
+; outputs:
+; none  
+
 print_hex:
     pusha
     mov cx, 0
