@@ -1,20 +1,40 @@
-read_sect:
-    mov ah, 02h
-    mov al, 01h
-    mov ch, 0h
-    mov cl, 0h
-    mov dh, 0h
-    mov dl, 80h
+[bits 16]
+; load 'dh' sectors from drive 'dl' into ES:BX
+disk_load:
+    pusha
+    push dx
+
+    mov ah, 0x02
+    mov al, dh   
+    mov cl, 0x02 
+    mov ch, 0x00 
+    mov dh, 0x00 
+
+
     int 0x13
-    jc .fail        ; Jump if Carry Flag (CF) is set (failure)
+    jc DK_ERR
+
+    pop dx
+    cmp al, dh
+    jne SCT_ERR
+    popa
     ret
 
-.fail:
-    mov si, DK_ERR
+
+DK_ERR:
+    mov bx, DISK_ERROR
     call print
-    call dk_lp
-dk_lp:
+    call print_nl
+    mov dh, ah
+    call print_hex 
+    jmp disk_loop
+
+SCT_ERR:
+    mov bx, SECTORS_ERROR
+    call print
+
+disk_loop:
     jmp $
 
-DK_ERR: db "dsk Read err", 0
-SCT_ERR db "inccorect # sct rd", 0
+DISK_ERROR: db "Disk read error", 0
+SECTORS_ERROR: db "Incorrect number of sectors read", 0

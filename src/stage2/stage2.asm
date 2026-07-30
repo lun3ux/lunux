@@ -1,12 +1,8 @@
-[bits 16]
-
-%include 'stage1/boot_print.asm'
-
-
+times 256 dw 0x0000
 mov bx, msg
 call print
 
+%include 'stage1/boot_print.asm'
+
 msg:
     db "STAGE 2 LOADED", 0
-
-times 512-($-$$) db 0

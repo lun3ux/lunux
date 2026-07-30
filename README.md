@@ -11,6 +11,8 @@
   |______|/|____|/   \|____|   | ||______|/|_____|/   \|____|   | ||____|   |____|  
                            |___|/                           |___|/                  
 ```
+Ver 0.0.1 Alpha
+
 # LUNUX
 Kind of a parody of "linux"... Think of lunux as a linux-like operating system. 
 

@@ -1,39 +1,18 @@
 [bits 16]
+  
+    mov bp, 0x8000
+    mov sp, bp
 
-xor ax, ax
-mov ds, ax
-mov es, ax
+    mov bx, 0x9000
+    mov dh, 2
 
-mov bp, 0x9000
-
-mov bx, intro
-call print
-call print_nl
-mov bx, message
-call print
-call print_nl
-xor bx, bx
-
-mov al, 02h
-mov ah, 00h,
-int 10h
-xor ax, ax
-mov si, 0x0500
-call read_sect
-mov dx, ax
-call print_hex
-jmp $
-
-%include 'stage1/boot_print.asm'
-%include 'stage1/boot_printhex.asm'
-%include 'stage1/boot_mem.asm'
+    call disk_load
+    jmp $
 
 
-intro:
-    db "LUNUX", 0
+%include "stage1/boot_mem.asm"
+%include "stage1/boot_print.asm"
+%include "stage1/boot_printhex.asm"
 
-message:
-    db "INITALIZING LUNUX BOOTLOADER", 0
-
-times 510-($-$$) db 0
+times 510 - ($-$$) db 0
 dw 0xaa55
