@@ -1,34 +1,39 @@
 [bits 16]
-; load 'dh' sectors from drive 'dl' into ES:BX
+
 disk_load:
     pusha
-    push dx
 
-    mov ah, 0x02
-    mov al, dh   
-    mov cl, 0x02 
-    mov ch, 0x00 
-    mov dh, 0x00 
-
-
+    mov ah, 0x00
+    mov dl, [BOOT_DRIVE]
     int 0x13
     jc DK_ERR
 
-    pop dx
-    cmp al, dh
+    mov al, 0x01        ; number of sectors
+    mov ah, 0x02
+
+    mov ch, 0x00      ; cylinder
+    mov cl, 0x02      ; sector
+    mov dh, 0x00      ; head
+    mov dl, [BOOT_DRIVE]
+    int 0x13
+    jc DK_ERR
+    cmp al,1
     jne SCT_ERR
     popa
     ret
+
+%include "stage1/boot_printhex.asm"
 
 
 DK_ERR:
     mov bx, DISK_ERROR
     call print
-    call print_nl
-    mov dh, ah
-    call print_hex 
-    jmp disk_loop
 
+    mov dl, ah      ; put BIOS error code in DX
+    xor dh, dh
+    call print_hex
+
+    jmp disk_loop
 SCT_ERR:
     mov bx, SECTORS_ERROR
     call print

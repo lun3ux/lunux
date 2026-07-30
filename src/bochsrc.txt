@@ -1,0 +1,20 @@
+megs: 32
+
+romimage: file=/usr/share/bochs/BIOS-bochs-latest
+vgaromimage: file=/usr/share/vgabios/vgabios.bin
+boot: disk
+
+ata0-master: type=disk, path="build/boot.img", mode=flat
+cpu: count=1, ips=1000000
+
+log: bochs.log
+
+mouse: enabled=0
+
+keyboard: type=mf, keymap=/usr/share/bochs/keymaps/x11-pc-us.map
+
+display_library: x
+
+panic: action=ask
+
+magic_break: enabled=1
