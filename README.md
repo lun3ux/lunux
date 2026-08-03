@@ -15,22 +15,33 @@
 
 # LUNUX
 
-> A tiny Linux-like operating system with a questionable name and ambitious goals.
+> A tiny Linux-inspired operating system.
+
+![logo]IMG_5931.webp
 
 [![Language: Assembly](https://img.shields.io/badge/Language-Assembly-blueviolet)](https://en.wikipedia.org/wiki/Assembly_language)  
 [![Status: Early Prototype](https://img.shields.io/badge/Status-Early_Prototype-red)](https://github.com/lun3ux/LuneOS)  
 [![Architecture: x86 (16-bit/32-bit)](https://img.shields.io/badge/Arch-x86-informational)]()  
 
+## How to use:
 
-LUNUX is a "linux-inspired" operting system.
+### Linux
 
-LUNUX is currently in the very early stages of development. So please set the bar low.
+get the latest release from the [releases tab]https://github.com/lun3ux/lunux/tags. Then simply use a USB etcher tool to install onto a USB, I recocmend using https://etcher.balena.io/. and then make sure that you have USB boot enabled in your BIOS or UEFI. 
+
+There might be an issue in which display doesn't work and it might not boot, if so then try to go into your system's boot menu and boot the USB from there.
+
+### Windows
+get the latest release from the [releases tab]https://github.com/lun3ux/lunux/tags. Windows support is experimental and may require additional setup. However, You can still etch into a USB, I reccomend using https://rufus.ie/en/.
+
+There might be an issue in which display doesn't work and it might not boot, if so then try to go into your system's boot menu and boot the USB from there.
 
 ## Current Functionality
 
 At the moment, LUNUX can:
 
 * Print text to the screen
+* Acsess to LibC
 
 That is currently about it, but every operating system has to start somewhere...
 
@@ -47,13 +58,17 @@ Some long-term goals include:
 
 These features are planned and may change as development continues.
 
-## Installation
+## Project Status
 
-### Linux
-Etch onto USB, I've been using https://etcher.balena.io/. 
-### Windows
-Windows support is experimental and may require additional setup. However, You can still etch into a USB, I reccomend using https://rufus.ie/en/.
+LUNUX is currently an **alpha-stage hobby project**. It is not ready for daily use, and it should not be installed on real hardware unless you understand the risks.
 
+Development is experimental, and things may break without warning.
+
+## Contributing
+
+Contributions, bug reports, ideas, and feedback are welcome.
+
+Since LUNUX is still in its early stages, the project structure and development workflow may change frequently.
 
 ## Building Requirements
 
@@ -117,18 +132,6 @@ Windows support is experimental and may require additional setup, recommended op
 WSL is likely the simplest option because it provides a real Linux environment while allowing you to continue using Windows.
 
 You can also just go to the **Releases** page and etch into a USB, instead of building from source.
-
-## Project Status
-
-LUNUX is currently an **alpha-stage hobby project**. It is not ready for daily use, and it should not be installed on real hardware unless you understand the risks.
-
-Development is experimental, and things may break without warning.
-
-## Contributing
-
-Contributions, bug reports, ideas, and feedback are welcome.
-
-Since LUNUX is still in its early stages, the project structure and development workflow may change frequently.
 
 ---
 
