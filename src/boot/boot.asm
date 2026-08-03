@@ -18,10 +18,13 @@ stack_top:
 
 section .text
 global _start
+extern _init
 extern kernel_main
 
 _start:
     mov esp, stack_top
+    cld
+    call _init
     call kernel_main
     cli
 .hang:

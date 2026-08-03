@@ -1,8 +1,9 @@
-#include "stdio.h"
+#include <stdio.h>
 
 #include <stdarg.h>
 #include <stdbool.h>
 #include <stdint.h>
+#include <cdefs.h>
 
 const unsigned SCREEN_WIDTH = 80;
 const unsigned SCREEN_HEIGHT = 25;

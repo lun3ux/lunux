@@ -67,6 +67,10 @@ The following packages are currently needed to build LUNUX:
 * `libmpc-dev`
 * `libmpfr-dev`
 * `texinfo`
+* `grub-pc-bin`
+* `grub-common`
+* `xorriso`
+* `qemu-system-x86`
 * `libisl-dev`
 * `qemu-system`
 * `gcc`
@@ -132,4 +136,3 @@ Since LUNUX is still in its early stages, the project structure and development 
 
 ```
 ```
-

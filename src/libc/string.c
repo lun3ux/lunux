@@ -1,4 +1,4 @@
-#include "string.h"
+#include <string.h>
 #include <stdint.h>
 #include <stddef.h>
 
@@ -42,9 +42,9 @@ char* strcpy(char* dst, const char* src)
     return origDst;
 }
 
-unsigned strlen(const char* str)
+size_t strlen(const char* str)
 {
-    unsigned len = 0;
+    size_t len = 0;
     while (*str)
     {
         ++len;
