@@ -1,23 +1,8 @@
-```text
-.---.
-|   |              _..._
-|   |            .'     '.
-|   |           .   .-.   .
-|   |           |  '   '  |            ____     _____
-|   |   _    _  |  |   |  |   _    _  `.   \  .'    /
-|   |  | '  / | |  |   |  |  | '  / |   `.  `'    .'
-|   | .' | .' | |  |   |  | .' | .' |     '.    .'
-|   | /  | /  | |  |   |  | /  | /  |     .'     `.
-'---'|   `'.  | |  |   |  ||   `'.  |   .'  .'`.   `.
-     '   .'|  '/|  |   |  |'   .'|  '/.'   /    `.   `.
-      `-'  `--' '--'   '--' `-'  `--''----'       '----'
-```
-
 # LUNUX
 
 > A tiny Linux-inspired operating system.
 
-![logo]IMG_5931.webp
+<img width="1200" height="900" alt="IMG_5931" src="https://github.com/user-attachments/assets/f90d96de-fce3-4294-a884-f8430b383f3e" />
 
 [![Language: Assembly](https://img.shields.io/badge/Language-Assembly-blueviolet)](https://en.wikipedia.org/wiki/Assembly_language)  
 [![Status: Early Prototype](https://img.shields.io/badge/Status-Early_Prototype-red)](https://github.com/lun3ux/LuneOS)  
