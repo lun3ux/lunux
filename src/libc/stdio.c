@@ -4,6 +4,7 @@
 #include <stdbool.h>
 #include <stdint.h>
 #include <cdefs.h>
+#include <x86.h>
 
 const unsigned SCREEN_WIDTH = 80;
 const unsigned SCREEN_HEIGHT = 25;
@@ -110,15 +111,21 @@ void putc(char c)
     setcursor(g_ScreenX, g_ScreenY);
 }
 
-void puts(const char* str)
+
+void putchar (char c)
 {
-    while(*str)
-    {
-        putc(*str);
-        str++;
-    }
+  return putc(c);
 }
 
+
+int puts(const char *str) {
+    while (*str) {
+        putchar(*str);
+        str++;
+    }
+    putchar('\n');
+    return 1;
+}
 const char g_HexChars[] = "0123456789abcdef";
 
 void printf_unsigned(unsigned long long number, int radix)

@@ -1,6 +1,7 @@
 #include <string.h>
 #include <stdint.h>
 #include <stddef.h>
+#include <x86.h>
 
 const char* strchr(const char* str, char chr)
 {

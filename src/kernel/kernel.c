@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <tty.h>
 #include <vga.h>
+#include <gdt.h>
 
 void printlogo(void)
 {
@@ -36,8 +37,9 @@ void printlogo(void)
 
 void kernel_main(void)
 {
+	buildGDT();
 	terminal_initialize();
 	printlogo();
-	terminal_writestring("LUNUX A-1.1.0");
+	terminal_writestring("LUNUX A-0.1.2");
 
 }

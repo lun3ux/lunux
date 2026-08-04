@@ -4,9 +4,10 @@
 #include <stddef.h>
 #include <stddef.h>
 
-void terminal_initalize(void);
+void terminal_initialize(void);
 void terminal_putchar(char c);
 void terminaL_write(const char* data, size_t size);
 void terminal_writestring(const char* data);
+void terminal_println(void);
 
 #endif

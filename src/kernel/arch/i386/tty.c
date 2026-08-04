@@ -74,19 +74,6 @@ void terminal_writestring(const char* data)
 	terminal_write(data, strlen(data));
 }
 
-
-size_t strlen(const char* str)
-{
-    size_t len = 0;
-    while (*str)
-    {
-        ++len;
-        ++str;
-    }
-
-    return len;
-}
-
 void terminal_println() {
 	terminal_column = 0;
 	terminal_row++;
